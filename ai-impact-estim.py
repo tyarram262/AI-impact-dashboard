@@ -6,7 +6,7 @@ import os
 EcoLogits.init(providers=["google_genai"])
 
 # 2. Initialize the Google Gemini client
-client = genai.Client(api_key="AIzaSyAbV4-2Sw16NCepuJ-lMJmbbPfIQboCOhs")
+client = genai.Client(api_key="GOOGLE_API_KEY")
 
 user_prompt = input("Enter your prompt: ")
 
@@ -20,7 +20,7 @@ response = client.models.generate_content(
 impact = response.impacts
 energy_used = impact.energy.value # in kWh
 water_used = energy_used * 1.8 # Estimate: 1.8L per kWh
-print(f"Response: {response.texta}")
+print(f"Response: {response.text}")
 print(f"Energy: {energy_used} kWh")
 print(f"Water: {water_used} Liters")
 

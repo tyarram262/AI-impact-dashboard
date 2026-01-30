@@ -9,7 +9,7 @@ st.title("🌍 AI Environmental Impact Dashboard")
 
 # Initialize
 EcoLogits.init(providers=["google_genai"])
-client = genai.Client(api_key="AIzaSyAbV4-2Sw16NCepuJ-lMJmbbPfIQboCOhs")
+client = genai.Client(api_key=st.secrets["GOOGLE_API_KEY"])
 
 # Sidebar for input
 with st.sidebar:
